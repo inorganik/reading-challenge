@@ -4,3 +4,8 @@
 .canvas-contain {
   height: calc(100vh - 58px);
 }
+
+canvas {
+  margin: auto;
+  flex-basis: 300px;
+}

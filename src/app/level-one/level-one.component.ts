@@ -13,7 +13,7 @@ export class LevelOneComponent implements AfterViewInit {
   constructor(private canvasService: CanvasService) {}
 
   ngAfterViewInit() {
-    this.canvasService.stretch('Can you read this?', this.canvas);
+    this.canvasService.stretch('Can you read this sentence?', this.canvas);
   }
 
 }
