@@ -1,0 +1,31 @@
+// bootstrap variable overrides
+
+$border-radius: .6rem;
+$input-border-radius: .25rem;
+
+// Typography
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$link-hover-decoration: underline;
+$link-decoration: underline;
+
+// Colors
+$primary: #09d3ff;
+$secondary: #9cf253;
+$fallback: #68e3a7;
+$warning: #fc8012;
+$body-color: #696969;
+
+$text-muted: $body-color;
+
+// Buttons
+$btn-padding-y: 1rem;
+$btn-padding-x: 2rem;
+$btn-font-weight: 700;
+$btn-font-size: 1.5rem;
+$btn-font-size-sm: 1rem;
+$btn-border-width: 0;
+
+// Inputs
+$input-font-size: 1.2rem;
+$input-bg: #F2F2F2;
+$input-focus-bg: white;

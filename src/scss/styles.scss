@@ -1,0 +1,6 @@
+@import 'variables.scss';
+@import '~bootstrap/scss/bootstrap';
+
+.canvas-contain {
+  height: calc(100vh - 58px);
+}
