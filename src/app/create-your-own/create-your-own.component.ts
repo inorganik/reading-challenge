@@ -10,6 +10,7 @@ export class CreateYourOwnComponent {
 
   @ViewChild('drawHere') canvas: ElementRef;
   txt: string;
+  spinning = false;
 
   constructor(private canvasService: CanvasService) {}
 

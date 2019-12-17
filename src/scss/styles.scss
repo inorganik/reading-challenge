@@ -7,5 +7,17 @@
 
 canvas {
   margin: auto;
-  flex-basis: 300px;
+}
+
+@keyframes spin {
+	0% {
+    transform: rotate(0deg);
+  }
+	100% {
+    transform: rotate(360deg);
+	}
+}
+
+.spin {
+  animation: spin 3s linear infinite;
 }

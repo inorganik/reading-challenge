@@ -1,5 +1,5 @@
 <div class="canvas-contain d-flex flex-column align-items-center justify-content-center">
   <h5>Create Your Own</h5>
-  <canvas #drawHere></canvas>
-  <app-input-bar (submitted)="handleText($event)" (download)="download()"></app-input-bar>
+  <canvas #drawHere [ngClass]="{ spin: spinning }"></canvas>
+  <app-input-bar (submitted)="handleText($event)" (download)="download()" (spin)="spinning = !spinning"></app-input-bar>
 </div>

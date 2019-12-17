@@ -8,11 +8,12 @@ import { FormControl } from '@angular/forms';
 })
 export class InputBarComponent implements OnInit {
 
-  textInput = new FormControl('');
+  textInput = new FormControl('hey does this work?');
   txt: string;
 
   @Output() submitted = new EventEmitter();
   @Output() download = new EventEmitter();
+  @Output() spin = new EventEmitter();
 
   constructor() { }
 
@@ -22,8 +23,5 @@ export class InputBarComponent implements OnInit {
   submit() {
     this.txt = this.textInput.value;
     this.submitted.emit(this.txt);
-  }
-  downloadImage() {
-    this.download.emit();
   }
 }

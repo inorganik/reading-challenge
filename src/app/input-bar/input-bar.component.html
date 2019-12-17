@@ -7,7 +7,8 @@
             <input class="form-control" [formControl]="textInput" placeholder="Text to stretch..." autocomplete="off">
           </div>
           <button class="btn btn-primary mx-2" (click)="submit()">Submit</button>
-          <button *ngIf="txt" class="btn btn-success" (click)="downloadImage()">Download</button>
+          <button *ngIf="txt" class="btn btn-success mr-2" (click)="download.emit()">Download</button>
+          <button *ngIf="txt" class="btn btn-warning" (click)="spin.emit()">Spin</button>
         </div>
       </div>
     </div>

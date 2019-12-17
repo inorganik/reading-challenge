@@ -12,29 +12,38 @@ export class CanvasService {
   stretch(txt: string, canvasEl: ElementRef) {
     txt = txt.toUpperCase();
     const canvas = canvasEl.nativeElement;
-    // todo: remove
-    // canvas.style.border = '1px black solid';
+    // canvas.style.border = '1px black solid'; // for debug
 
     canvas.setAttribute('width', this.dimension);
     canvas.setAttribute('height', this.dimension);
 
     const ctx = canvas.getContext('2d');
+
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    const fontSize = 40;
-    const lineHeight = fontSize * .75;
+    const fontSize = 50;
+    const lineHeight = fontSize * .82;
 
     ctx.font = `${fontSize}px Arial`;
-    ctx.textBaseline = 'top';
+    ctx.textBaseline = 'botton';
+    ctx.textAlign = 'center';
 
+    let scaleX = 0.3;
     const metrics = ctx.measureText(txt);
-    const scaleX = canvas.width / metrics.width;
-    const scaleY = canvas.height / lineHeight;
-    ctx.scale(scaleX, scaleY);
-
+    if (metrics.width > canvas.width) {
+      scaleX = Math.min(scaleX, canvas.width / metrics.width);
+    }
+    let xPos = canvas.width / 2;
+    const posXScale = 1 / scaleX;
+    xPos = xPos * posXScale;
+    const scaleY = this.dimension / lineHeight;
+    const posYScale = 1 / scaleY;
     ctx.fillStyle = 'black';
-    ctx.fillText(txt, 0, -1.5);
+    ctx.scale(scaleX, scaleY);
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.fillText(txt, xPos, canvas.height * posYScale - 2.5);
 
   }
 
